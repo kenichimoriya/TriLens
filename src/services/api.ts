@@ -155,13 +155,12 @@ async function queryClaude(
 ): Promise<void> {
   if (!apiKey) throw new Error('Claude API key not set');
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+  const res = await fetch('https://g2cqtvqt3l.execute-api.ap-northeast-1.amazonaws.com/prod/messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': apiKey,
       'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
     },
     body: JSON.stringify({
       model: 'claude-sonnet-4-20250514',
